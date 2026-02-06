@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canal Ético - PTEE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+  <header class="bg-blue-900 text-white py-4 text-xl font-bold relative">
+    <img src="../assets/CEMIDBLANCO.png"
+         alt="Logo"
+         class="h-15 absolute left-4 top-1/2 -translate-y-1/2 hidden md:block">
+    <div class="text-center">
+      Canal Ético - PTEE
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4">
+
+    <h1 class="text-2xl font-bold text-[#00487A] text-center mt-6">
+      Canal Ético – Programa de Transparencia y Ética Empresarial (PTEE)
+    </h1>
+
+    <p class="text-gray-600 text-sm text-center mt-3">
+     Este canal hace parte del PTEE de la Corporación Educativa Minuto de Dios, en cumplimiento de la
+     Circular Externa 20251000000035CS de la Superintendencia de
+     Vigilancia y Seguridad Privada. Está destinado a reportar, de buena fe, posibles actos de corrupción, 
+     soborno, fraude o incumplimientos éticos.
+    </p>
+
+    <div class="flex justify-between mt-8 border-b pb-3 text-sm font-semibold">
+      <div id="step-1" class="step text-blue-900 border-b-4 border-blue-900">1. Contexto</div>
+      <div id="step-2" class="step text-gray-400">2. Detalles</div>
+      <div id="step-3" class="step text-gray-400">3. Información</div>
+      <div id="step-4" class="step text-gray-400">4. Finaliza</div>
+    </div>
+
+    <div id="paso-1" class="paso bg-white rounded-2xl shadow p-6 mt-6">
+      <label class="block font-semibold mb-2">Tipo de reporte</label>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4">
+        <button type="button" class="border rounded p-2">Corrupción o soborno 
+          <img src="../assets/tramposo.png" class="" alt=""></button>
+          <button type="button" class="border rounded p-2">Fraude o manipulación 
+            <img src="../assets/fraude.png" alt=""></button>
+            <button type="button" class="border rounded p-2">Conflicto de interés 
+              <img src="../assets/conflictos.png" alt=""></button>
+              <button type="button" class="border rounded p-2">
+                Incumplimiento PTEE o Código de Ética
+                <img src="../assets/incumplimiento.png" alt="">
+              </button>
+            </div>
+            <label class="block font-semibold mb-1">Entidad involucrada</label>
+             <select
+             id="estado"
+             name="estado"
+             class="w-full border border-gray-300 rounded-lg p-2 mb-4 
+                  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 
+                  bg-white">
+               <option value="" disabled selected>Seleccione una entidad</option>
+               <option value="CEMID">CEMID</option>
+               <option value="San Pablo">San Pablo</option>
+               <option value="Formemos">Formemos</option>
+               <option value="Coompuente">Coompuente</option>
+               <option value="especializada">Coop especializada de Educación (Nocturno)</option>
+               <option value="Fundación">Fundación Rafael Pombo</option>
+             </select>
+
+      <label class="block font-semibold mb-1">Área o proceso involucrado</label>
+      <input type="text" class="w-full border rounded p-2 mb-4">
+
+      <label class="block font-semibold mb-1">Fecha aproximada</label>
+      <input type="date" class="w-full border rounded p-2">
+
+      <div class="flex justify-between mt-6">
+        <button disabled
+          class="border px-4 py-2 rounded text-gray-400 cursor-not-allowed">
+          Atrás
+        </button>
+
+        <button onclick="siguientePaso()"
+          class="bg-blue-900 text-white px-6 py-2 rounded">
+          Siguiente
+        </button>
+      </div>
+    </div>
+
+    <div id="paso-2" class="paso hidden bg-white rounded-2xl shadow p-6 mt-6">
+
+      <label class="block font-semibold mb-2">Descripción de los hechos</label>
+      <textarea rows="6"
+        class="w-full border rounded p-2 mb-4"
+        placeholder="Describa detalladamente lo ocurrido"></textarea>
+
+      <label class="block font-semibold mb-2">Descripción de los hechos2</label>
+      <textarea rows="6"
+        class="w-full border rounded p-2 mb-4"
+        placeholder="Describa detalladamente lo ocurrido"></textarea>
+
+      <label class="block font-semibold mb-2">Descripción de los hechos3</label>
+      <textarea rows="6"
+        class="w-full border rounded p-2 mb-4"
+        placeholder="Describa detalladamente lo ocurrido"></textarea>
+
+
+      <div class="flex justify-between mt-6">
+        <button onclick="pasoAnterior()" class="border px-4 py-2 rounded">
+          Atrás
+        </button>
+
+        <button onclick="siguientePaso()"
+          class="bg-blue-900 text-white px-6 py-2 rounded">
+          Siguiente
+        </button>
+      </div>
+    </div>
+
+    <div id="paso-3" class="paso hidden bg-white rounded-2xl shadow p-6 mt-6">
+
+      <label class="block font-semibold mb-1">
+        ¿Desea realizar el reporte de forma anónima?
+      </label>
+      <select class="w-full border rounded p-2 mb-4">
+        <option>Sí</option>
+        <option>No</option>
+      </select>
+
+      <label class="block font-semibold mb-1">Nombre (opcional)</label>
+      <input type="text" class="w-full border rounded p-2 mb-4">
+
+      <label class="block font-semibold mb-1">Relación con la entidad</label>
+      <input type="text" class="w-full border rounded p-2">
+
+      <div class="flex justify-between mt-6">
+        <button onclick="pasoAnterior()" class="border px-4 py-2 rounded">
+          Atrás
+        </button>
+
+        <button onclick="siguientePaso()"
+          class="bg-blue-900 text-white px-6 py-2 rounded">
+          Siguiente
+        </button>
+      </div>
+    </div>
+
+    <div id="paso-4"
+         class="paso hidden bg-white rounded-2xl shadow p-6 mt-6 text-center">
+
+      <h2 class="text-xl font-bold text-blue-900 mb-4">
+        Reporte listo para enviar
+      </h2>
+
+      <p class="text-gray-600 mb-6">
+        Gracias por contribuir a la transparencia y ética institucional.
+      </p>
+
+      <div class="flex justify-between mt-6">
+        <button onclick="pasoAnterior()" class="border px-4 py-2 rounded">
+          Atrás
+        </button>
+
+        <button class="bg-green-600 text-white px-6 py-2 rounded">
+          Finalizar
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+
+  <script>
+    let pasoActual = 1;
+
+    function mostrarPaso(paso) {
+      document.querySelectorAll('.paso').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.step').forEach(s => {
+        s.classList.remove('text-blue-900', 'border-b-4', 'border-blue-900');
+        s.classList.add('text-gray-400');
+      });
+
+      document.getElementById(`paso-${paso}`).classList.remove('hidden');
+      const step = document.getElementById(`step-${paso}`);
+      step.classList.add('text-blue-900', 'border-b-4', 'border-blue-900');
+      step.classList.remove('text-gray-400');
+
+      pasoActual = paso;
+    }
+
+    function siguientePaso() {
+      if (pasoActual < 4) mostrarPaso(pasoActual + 1);
+    }
+
+    function pasoAnterior() {
+      if (pasoActual > 1) mostrarPaso(pasoActual - 1);
+    }
+  </script>
+
+</body>
+</html>
