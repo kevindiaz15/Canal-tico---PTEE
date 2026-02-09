@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canal Ético - PTEE</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -10,9 +11,8 @@
 <body class=" font-sans">
 
   <header class="bg-blue-900 text-white py-4 text-xl font-bold relative">
-    <img src="../assets/CEMIDBLANCO.png"
-         alt="Logo"
-         class="h-15 absolute left-4 top-1/2 -translate-y-1/2 hidden md:block">
+    <img src="../assets/CEMIDBLANCO.png" alt="Logo"
+      class="h-15 absolute left-4 top-1/2 -translate-y-1/2 hidden md:block">
     <div class="text-center">
       Canal Ético - PTEE
     </div>
@@ -25,10 +25,10 @@
     </h1>
 
     <p class="text-gray-600 text-sm text-center mt-3">
-     Este canal hace parte del PTEE de la Corporación Educativa Minuto de Dios, en cumplimiento de la
-     Circular Externa 20251000000035CS de la Superintendencia de
-     Vigilancia y Seguridad Privada. Está destinado a reportar, de buena fe, posibles actos de corrupción, 
-     soborno, fraude o incumplimientos éticos.
+      Este canal hace parte del PTEE de la Corporación Educativa Minuto de Dios, en cumplimiento de la
+      Circular Externa 20251000000035CS de la Superintendencia de
+      Vigilancia y Seguridad Privada. Está destinado a reportar, de buena fe, posibles actos de corrupción,
+      soborno, fraude o incumplimientos éticos.
     </p>
 
     <div class="flex justify-between mt-8 border-b pb-3 text-sm font-semibold">
@@ -38,118 +38,98 @@
       <div id="step-4" class="step text-gray-400">4. Finaliza</div>
     </div>
 
-   <div id="paso-1" class="paso bg-white rounded-2xl shadow p-6 mt-6">
-  <label class="block font-semibold mb-2">Tipo de reporte</label>
+    <div id="paso-1" class="paso bg-white rounded-2xl shadow p-6 mt-6">
+      <label class="block font-semibold mb-2">Tipo de reporte</label>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 ">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 
-    <button type="button"
-      class="border rounded-xl p-3 flex items-center gap-3 hover:bg-gray-100 transition">
-      <img src="../assets/tramposo.png" alt=""
-        class="w-10 h-10 object-contain">
-      <span>Corrupción o soborno</span>
-    </button>
-
-    <button type="button"
-      class="border rounded-xl p-3 flex items-center gap-3 hover:bg-gray-100 transition">
-      <img src="../assets/fraude.png" alt=""
-        class="w-10 h-10 object-contain">
-      <span>Fraude o manipulación</span>
-    </button>
-
-    <button type="button"
-      class="border rounded-xl p-3 flex items-center gap-3 hover:bg-gray-100 transition">
-      <img src="../assets/conflictos.png" alt=""
-        class="w-10 h-10 object-contain">
-      <span>Conflicto de interés</span>
-    </button>
-
-    <button type="button"
-      class="border rounded-xl p-3 flex items-center gap-3 hover:bg-gray-100 transition">
-      <img src="../assets/incumplimiento.png" alt=""
-        class="w-10 h-10 object-contain">
-      <span>Incumplimiento PTEE o Código de Ética</span>
-    </button>
-
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-4">
-  <div>
-    <label class="block font-semibold mb-1">
-      Entidad involucrada
-    </label>
-    <select
-      id="estado"
-      name="estado"
-      class="w-full border border-gray-300 rounded-lg p-2
-             focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600
-             bg-white">
-      <option value="" disabled selected>Seleccione una entidad</option>
-      <option value="CEMID">CEMID</option>
-      <option value="San Pablo">San Pablo</option>
-      <option value="Formemos">Formemos</option>
-      <option value="Coompuente">Coompuente</option>
-      <option value="especializada">Coop especializada de Educación (Nocturno)</option>
-      <option value="Fundación">Fundación Rafael Pombo</option>
-    </select>
-  </div>
-  <div>
-    <label class="block font-semibold mb-1">
-      Área o proceso involucrado
-    </label>
-    <input
-      type="text"
-      class="w-full border border-gray-300 rounded-lg p-2
-             focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
-  </div>
-  <div>
-    <label class="block font-semibold mb-1">
-      Fecha aproximada
-    </label>
-    <input
-      type="date"
-      class="w-full border border-gray-300 rounded-lg p-2
-             focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
-  </div>
-</div>
-  <div class="flex justify-between mt-6 py-2">
-        <button disabled
-          class="border px-4 py-2 rounded text-gray-400 cursor-not-allowed">
-          Atrás
+        <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
+          <img src="../assets/tramposo.png" class="w-10 h-10 object-contain">
+          <span>Corrupción o soborno</span>
         </button>
 
-        <button onclick="siguientePaso()"
-          class="bg-blue-900 text-white px-6 py-2 rounded">
+        <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
+          <img src="../assets/fraude.png" class="w-10 h-10 object-contain">
+          <span>Fraude o manipulación</span>
+        </button>
+
+        <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
+          <img src="../assets/conflictos.png" class="w-10 h-10 object-contain">
+          <span>Conflicto de interés</span>
+        </button>
+
+        <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
+          <img src="../assets/incumplimiento.png" class="w-10 h-10 object-contain">
+          <span>Incumplimiento PTEE o Código de Ética</span>
+        </button>
+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-4">
+        <div>
+          <label class="block  font-semibold mb-1">
+            Entidad involucrada
+          </label>
+          <select id="estado" name="estado" class="w-full border  border-gray-300 rounded-lg p-2
+             focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600
+             bg-white">
+            <option value="" disabled selected>Seleccione una entidad</option>
+            <option value="CEMID">CEMID</option>
+            <option value="San Pablo">San Pablo</option>
+            <option value="Formemos">Formemos</option>
+            <option value="Coompuente">Coompuente</option>
+            <option value="especializada">Coop especializada de Educación (Nocturno)</option>
+            <option value="Fundación">Fundación Rafael Pombo</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">
+            Área o proceso involucrado
+          </label>
+          <input type="text" class="w-full border border-gray-300 rounded-lg p-2
+             focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">
+            Fecha aproximada
+          </label>
+          <input type="date" class="w-full border border-gray-300 rounded-lg p-2
+             focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+        </div>
+      </div>
+      <div class="flex justify-between mt-6 py-2">
+        <button disabled class="border px-4 py-2 rounded text-gray-400 cursor-not-allowed">
+          Atras
+        </button>
+
+        <button onclick="siguientePaso()" class="bg-blue-900 text-white px-6 py-2 rounded">
           Siguiente
         </button>
       </div>
     </div>
-</div>
+    </div>
 
     <div id="paso-2" class="paso hidden bg-white rounded-2xl shadow p-6 mt-6">
 
       <label class="block font-semibold mb-2">Lugar o sede donde ocurrieron los hechos</label>
-      <textarea rows="2"
-        class="w-full border rounded p-2 mb-4"
+      <textarea rows="2" class="w-full border rounded p-2 mb-4"
         placeholder="Describe la sede, ciudad o lugar específico donde sucedieron los hechos."></textarea>
 
       <label class="block font-semibold mb-2">Descripción de los hechos</label>
-      <textarea rows="2"
-        class="w-full border rounded p-2 mb-4"
+      <textarea rows="2" class="w-full border rounded p-2 mb-4"
         placeholder="Describe de manera clara qué ocurrió, cómo ocurrió y quiénes están involucrados, en lo posible con datos verificables."></textarea>
 
       <label class="block font-semibold mb-2">Personas involucradas (si las conoces)</label>
-      <textarea rows="2"
-        class="w-full border rounded p-2 mb-4"
+      <textarea rows="2" class="w-full border rounded p-2 mb-4"
         placeholder="Incluye nombres, cargos o cualquier dato que permita identificar a las personas mencionadas."></textarea>
 
 
       <div class="flex justify-between mt-6">
         <button onclick="pasoAnterior()" class="border px-4 py-2 rounded">
-          Atrás
+          Atras
         </button>
 
-        <button onclick="siguientePaso()"
-          class="bg-blue-900 text-white px-6 py-2 rounded">
+        <button onclick="siguientePaso()" class="bg-blue-900 text-white px-6 py-2 rounded">
           Siguiente
         </button>
       </div>
@@ -160,92 +140,92 @@
       <label class="block font-semibold mb-1">
         ¿Desea realizar el reporte de forma anonima?
       </label>
-      <select class="w-full border rounded p-2 mb-4">
-        <option>Si</option>
-        <option>No</option>
+
+      <select id="anonimo" class="w-full border rounded p-2 mb-4" onchange="AnonimoSi()">
+        <option value="No">No</option>
+        <option value="Si">Si</option>
       </select>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+      <div id="datos-personales" class="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
         <div>
           <label class="block font-semibold mb-1">Nombre completo</label>
           <input type="text" class="w-full border rounded p-2 mb-4">
         </div>
+
         <div>
           <label class="block font-semibold mb-1">Relación con la entidad</label>
           <input type="text" class="w-full border rounded p-2">
         </div>
+
         <div>
           <label class="block font-semibold mb-1">Correo electrónico</label>
           <input type="text" class="w-full border rounded p-2 mb-4">
         </div>
+
         <div>
           <label class="block font-semibold mb-1">Teléfono de contacto</label>
           <input type="text" class="w-full border rounded p-2">
         </div>
       </div>
-
       <div class="flex justify-between mt-6">
         <button onclick="pasoAnterior()" class="border px-4 py-2 rounded">
-          Atrás
+          Atras
         </button>
 
-        <button onclick="siguientePaso()"
-          class="bg-blue-900 text-white px-6 py-2 rounded">
+        <button onclick="siguientePaso()" class="bg-blue-900 text-white px-6 py-2 rounded">
           Siguiente
         </button>
       </div>
     </div>
+    </div>
 
-    <div id="paso-4"
-         class="paso hidden bg-white rounded-2xl shadow p-6 mt-6 text-center">
+
+    <div id="paso-4" class="paso hidden bg-white rounded-2xl shadow p-6 mt-6 text-center">
 
       <h2 class="text-xl font-bold text-blue-900 mb-4">
         Autorización de tratamiento de datos personales
       </h2>
 
       <p class="text-gray-600 mb-6">
-        La corporación Educativa Minuto de Dios garantiza la confidencialidad de la información y prohíbe cualquier represalia contra quienes denuncien de buena fe. La información será tratada conforme al PTEE y a los procedimientos internos definidos según la Circular Externa 20251000000035CS.
+        La corporación Educativa Minuto de Dios garantiza la confidencialidad de la información y prohíbe cualquier
+        represalia contra quienes denuncien de buena fe. La información será tratada conforme al PTEE y a los
+        procedimientos internos definidos según la Circular Externa 20251000000035CS.
       </p>
-<p class="text-blue-900 font-semibold mb-2">
-  Autorizo el tratamiento de mis datos personales conforme a la Política de Tratamiento de Datos de
-  la Corporación Educativa Minuto de Dios y a las finalidades asociadas a la gestión de denuncias del PTEE.
-</p>
+      <p class="text-blue-900 font-semibold mb-2">
+        Autorizo el tratamiento de mis datos personales conforme a la Política de Tratamiento de Datos de
+        la Corporación Educativa Minuto de Dios y a las finalidades asociadas a la gestión de denuncias del PTEE.
+      </p>
 
-<div class="flex items-start gap-3 mb-6">
-  <input
-    type="checkbox"
-    class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
+      <div class="flex items-start gap-3 mb-6">
+        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
            focus:ring-blue-600">
-  <label class="text-sm text-gray-700">
-    Sí autorizo. Puede consultar la
-    <a href="https://corporacioneducativaminutodedios.edu.co/hubfs/Minuto%20de%20Dios%20-%20Main%20Theme/DOCUMENTOS%20CEMID/Politica-TratamientoDatos.pdf" class="text-blue-700 font-semibold underline hover:text-blue-900">
-      Política de Tratamiento de Datos Personales
-    </a>
-    en el siguiente enlace.
-  </label>
-</div>
+        <label class="text-sm text-gray-700">
+          Sí autorizo. Puede consultar la
+          <a href="https://corporacioneducativaminutodedios.edu.co/hubfs/Minuto%20de%20Dios%20-%20Main%20Theme/DOCUMENTOS%20CEMID/Politica-TratamientoDatos.pdf"
+            class="text-blue-700 font-semibold underline hover:text-blue-900">
+            Política de Tratamiento de Datos Personales
+          </a>
+          en el siguiente enlace.
+        </label>
+      </div>
 
-<p class="text-blue-900 font-semibold mb-2">
-  Declaración de buena fe
-</p>
+      <p class="text-blue-900 font-semibold mb-2">
+        Declaración de buena fe
+      </p>
 
-<div class="flex items-start gap-3">
-  <input
-    type="checkbox"
-    class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
+      <div class="flex items-start gap-3 mb-6">
+        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
            focus:ring-blue-600">
-  <label class="text-sm text-gray-700">
-    Declaro que la información suministrada es veraz según mi conocimiento y que actué de buena fe,
-    entendiendo que el uso malintencionado de este canal puede generar responsabilidades; por tanto,
-    confirmo el envío de esta denuncia al Canal Ético.
-  </label>
-</div>
-
-
+        <label class="text-sm text-gray-700">
+          Declaro que la información suministrada es veraz según mi conocimiento y que actué de buena fe,
+          entendiendo que el uso malintencionado de este canal puede generar responsabilidades; por tanto,
+          confirmo el envío de esta denuncia al Canal Ético.
+        </label>
+      </div>
 
       <div class="flex justify-between mt-6">
         <button onclick="pasoAnterior()" class="border px-4 py-2 rounded">
-          Atrás
+          Atras
         </button>
 
         <button class="bg-blue-900 text-white px-6 py-2 rounded">
@@ -258,6 +238,23 @@
 
 
   <script>
+
+    const botones = document.querySelectorAll('.opcion');
+
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+
+        botones.forEach(b => {
+          b.classList.remove('bg-yellow-200', 'border-gray-400');
+        });
+
+        boton.classList.add('bg-yellow-200', 'border-gray-400');
+
+        console.log('Botón seleccionado:', boton.innerText);
+      });
+    });
+
+
     let pasoActual = 1;
 
     function mostrarPaso(paso) {
@@ -282,7 +279,23 @@
     function pasoAnterior() {
       if (pasoActual > 1) mostrarPaso(pasoActual - 1);
     }
+
+    function AnonimoSi() {
+      const anonimo = document.getElementById("anonimo").value;
+      const datos = document.getElementById("datos-personales");
+
+      if (anonimo === "Si") {
+        datos.style.display = "none";
+      } else {
+        datos.style.display = "grid";
+      }
+    }
+
+    function seleccion() {
+
+    }
   </script>
 
 </body>
+
 </html>
