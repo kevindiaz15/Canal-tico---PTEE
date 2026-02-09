@@ -1,3 +1,9 @@
+<?php 
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,18 +12,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canal Ético - PTEE</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+</head>
 <body class=" font-sans">
 
   <header class="bg-blue-900 text-white py-4 text-xl font-bold relative">
-    <img src="../assets/CEMIDBLANCO.png" alt="Logo"
+    <img src="./assets/CEMIDBLANCO.png" alt="Logo"
       class="h-15 absolute left-4 top-1/2 -translate-y-1/2 hidden md:block">
     <div class="text-center">
       Canal Ético - PTEE
     </div>
   </header>
-
+  
   <main class="max-w-5xl mx-auto px-4">
 
     <h1 class="text-2xl font-bold text-[#00487A] text-center mt-6">
@@ -38,28 +45,28 @@
       <div id="step-4" class="step text-gray-400">4. Finaliza</div>
     </div>
 
-    <div id="paso-1" class="paso bg-white rounded-2xl shadow p-6 mt-6">
+    <div id="paso-1" class="requerido paso bg-white rounded-2xl shadow p-6 mt-6">
       <label class="block font-semibold mb-2">Tipo de reporte</label>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 
         <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
-          <img src="../assets/tramposo.png" class="w-10 h-10 object-contain">
+          <img src="./assets/tramposo.png" class="w-10 h-10 object-contain">
           <span>Corrupción o soborno</span>
         </button>
 
         <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
-          <img src="../assets/fraude.png" class="w-10 h-10 object-contain">
+          <img src="./assets/fraude.png" class="w-10 h-10 object-contain">
           <span>Fraude o manipulación</span>
         </button>
 
         <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
-          <img src="../assets/conflictos.png" class="w-10 h-10 object-contain">
+          <img src="./assets/conflictos.png" class="w-10 h-10 object-contain">
           <span>Conflicto de interés</span>
         </button>
 
         <button type="button" class="opcion border rounded-xl p-3 flex items-center gap-3 transition">
-          <img src="../assets/incumplimiento.png" class="w-10 h-10 object-contain">
+          <img src="./assets/incumplimiento.png" class="w-10 h-10 object-contain">
           <span>Incumplimiento PTEE o Código de Ética</span>
         </button>
 
@@ -70,7 +77,7 @@
           <label class="block  font-semibold mb-1">
             Entidad involucrada
           </label>
-          <select id="estado" name="estado" class="w-full border  border-gray-300 rounded-lg p-2
+          <select id="estado" name="estado" class=" requerido w-full border  border-gray-300 rounded-lg p-2
              focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600
              bg-white">
             <option value="" disabled selected>Seleccione una entidad</option>
@@ -86,14 +93,14 @@
           <label class="block font-semibold mb-1">
             Área o proceso involucrado
           </label>
-          <input type="text" class="w-full border border-gray-300 rounded-lg p-2
+          <input type="text" class="requerido w-full border border-gray-300 rounded-lg p-2
              focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
         </div>
         <div>
           <label class="block font-semibold mb-1">
             Fecha aproximada
           </label>
-          <input type="date" class="w-full border border-gray-300 rounded-lg p-2
+          <input type="date" class="requerido w-full border border-gray-300 rounded-lg p-2
              focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
         </div>
       </div>
@@ -109,18 +116,18 @@
     </div>
     </div>
 
-    <div id="paso-2" class="paso hidden bg-white rounded-2xl shadow p-6 mt-6">
+    <div id="paso-2" class=" paso hidden bg-white rounded-2xl shadow p-6 mt-6">
 
       <label class="block font-semibold mb-2">Lugar o sede donde ocurrieron los hechos</label>
-      <textarea rows="2" class="w-full border rounded p-2 mb-4"
+      <textarea rows="2" class="requerido w-full border rounded p-2 mb-4"
         placeholder="Describe la sede, ciudad o lugar específico donde sucedieron los hechos."></textarea>
 
       <label class="block font-semibold mb-2">Descripción de los hechos</label>
-      <textarea rows="2" class="w-full border rounded p-2 mb-4"
+      <textarea rows="2" class="requerido w-full border rounded p-2 mb-4"
         placeholder="Describe de manera clara qué ocurrió, cómo ocurrió y quiénes están involucrados, en lo posible con datos verificables."></textarea>
 
       <label class="block font-semibold mb-2">Personas involucradas (si las conoces)</label>
-      <textarea rows="2" class="w-full border rounded p-2 mb-4"
+      <textarea rows="2" class="requerido w-full border rounded p-2 mb-4"
         placeholder="Incluye nombres, cargos o cualquier dato que permita identificar a las personas mencionadas."></textarea>
 
 
@@ -148,7 +155,7 @@
 
       <div id="datos-personales" class="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
         <div>
-          <label class="block font-semibold mb-1">Nombre completo</label>
+          <label id="nombre" class="block font-semibold mb-1">Nombre completo</label>
           <input type="text" class="w-full border rounded p-2 mb-4">
         </div>
 
@@ -187,7 +194,7 @@
       </h2>
 
       <p class="text-gray-600 mb-6">
-        La corporación Educativa Minuto de Dios garantiza la confidencialidad de la información y prohíbe cualquier
+        La corporación Educativa Minuto de Dios garantiza la confidencialidad de la información y prohíbe cualquier
         represalia contra quienes denuncien de buena fe. La información será tratada conforme al PTEE y a los
         procedimientos internos definidos según la Circular Externa 20251000000035CS.
       </p>
@@ -197,7 +204,7 @@
       </p>
 
       <div class="flex items-start gap-3 mb-6">
-        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
+        <input type="checkbox" class="requerido mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
            focus:ring-blue-600">
         <label class="text-sm text-gray-700">
           Sí autorizo. Puede consultar la
@@ -214,7 +221,7 @@
       </p>
 
       <div class="flex items-start gap-3 mb-6">
-        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
+        <input type="checkbox" class="requerido mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
            focus:ring-blue-600">
         <label class="text-sm text-gray-700">
           Declaro que la información suministrada es veraz según mi conocimiento y que actué de buena fe,
@@ -228,73 +235,116 @@
           Atras
         </button>
 
-        <button class="bg-blue-900 text-white px-6 py-2 rounded">
+        <button onclick="finalizar()" class="bg-blue-900 text-white px-6 py-2 rounded">
           Finalizar
         </button>
       </div>
     </div>
-
   </main>
 
-
   <script>
+  const botones = document.querySelectorAll('.opcion');
+  let opcionSeleccionada = false;
 
-    const botones = document.querySelectorAll('.opcion');
-
-    botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-
-        botones.forEach(b => {
-          b.classList.remove('bg-yellow-200', 'border-gray-400');
-        });
-
-        boton.classList.add('bg-yellow-200', 'border-gray-400');
-
-        console.log('Botón seleccionado:', boton.innerText);
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      botones.forEach(b => {
+        b.classList.remove('bg-[#EEAD15]', 'border-gray-400');
       });
+      boton.classList.add('bg-[#EEAD15]', 'border-gray-400');
+      opcionSeleccionada = true;
+    });
+  });
+
+  let pasoActual = 1;
+
+  function mostrarPaso(paso) {
+    document.querySelectorAll('.paso').forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.step').forEach(s => {
+      s.classList.remove('text-blue-900', 'border-b-4', 'border-blue-900');
+      s.classList.add('text-gray-400');
     });
 
+    document.getElementById(`paso-${paso}`).classList.remove('hidden');
+    const step = document.getElementById(`step-${paso}`);
+    step.classList.add('text-blue-900', 'border-b-4', 'border-blue-900');
+    step.classList.remove('text-gray-400');
 
-    let pasoActual = 1;
+    pasoActual = paso;
+  }
 
-    function mostrarPaso(paso) {
-      document.querySelectorAll('.paso').forEach(p => p.classList.add('hidden'));
-      document.querySelectorAll('.step').forEach(s => {
-        s.classList.remove('text-blue-900', 'border-b-4', 'border-blue-900');
-        s.classList.add('text-gray-400');
-      });
+  function validarPaso(paso) {
+    let valido = true;
+    let primerError = null;
 
-      document.getElementById(`paso-${paso}`).classList.remove('hidden');
-      const step = document.getElementById(`step-${paso}`);
-      step.classList.add('text-blue-900', 'border-b-4', 'border-blue-900');
-      step.classList.remove('text-gray-400');
-
-      pasoActual = paso;
+    if (paso === 1 && !opcionSeleccionada) {
+      Swal.fire('Seleccione un tipo de reporte');
+      return false;
     }
 
-    function siguientePaso() {
-      if (pasoActual < 4) mostrarPaso(pasoActual + 1);
-    }
+    const anonimo = document.getElementById("anonimo")?.value;
 
-    function pasoAnterior() {
-      if (pasoActual > 1) mostrarPaso(pasoActual - 1);
-    }
+    const campos = document.querySelectorAll(`#paso-${paso} .requerido`);
 
-    function AnonimoSi() {
-      const anonimo = document.getElementById("anonimo").value;
-      const datos = document.getElementById("datos-personales");
+    campos.forEach(campo => {
 
-      if (anonimo === "Si") {
-        datos.style.display = "none";
-      } else {
-        datos.style.display = "grid";
+      if (
+        anonimo === "Si" &&
+        campo.closest('#datos-personales')
+      ) {
+        return;
       }
-    }
 
-    function seleccion() {
+      if (campo.type === "checkbox") {
+        if (!campo.checked) {
+          valido = false;
+          if (!primerError) primerError = campo;
+        }
+        return;
+      }
 
+      if (!campo.value || campo.value.trim() === "") {
+        campo.classList.add('border-red-500');
+        valido = false;
+        if (!primerError) primerError = campo;
+      } else {
+        campo.classList.remove('border-red-500');
+      }
+    });
+
+    if (!valido && primerError) {
+      primerError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      Swal.fire('Por favor complete los campos obligatorios antes de continuar.');
     }
-  </script>
+    return valido;
+  }
+
+  function siguientePaso() {
+    if (!validarPaso(pasoActual)) return;
+    if (pasoActual < 4) mostrarPaso(pasoActual + 1);
+  }
+
+  function pasoAnterior() {
+    if (pasoActual > 1) mostrarPaso(pasoActual - 1);
+  }
+
+  function AnonimoSi() {
+    const anonimo = document.getElementById("anonimo").value;
+    const datos = document.getElementById("datos-personales");
+
+    if (anonimo === "Si") {
+      datos.style.display = "none";
+    } else {
+      datos.style.display = "grid";
+    }}
+
+
+  function finalizar() {
+    if (!validarPaso(pasoActual)) return;
+    Swal.fire('Reporte enviado', 'Gracias por utilizar el Canal Ético del PTEE.', 'success');
+  }
+  
+</script>
 
 </body>
 
