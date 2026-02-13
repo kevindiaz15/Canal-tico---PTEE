@@ -4,24 +4,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $datos = [
-        "tipo_reporte" => $_POST['tipo_reporte'] ?? '',
-        "entidad" => $_POST['entidad'] ?? '',
-        "area_proceso" => $_POST['area_proceso'] ?? '', 
-        "fecha_aproximada" => $_POST['fecha_aproximada'] ?? '',
-        "lugar_hechos" => $_POST['lugar_hechos'] ?? '',
-        "descripcion_hechos" => $_POST['descripcion_hechos'] ?? '',
-        "personas_involucradas" => $_POST['personas_involucradas'] ?? '',
-        "anonimo" => $_POST['anonimo'] ?? '',
-        "nombre_completo" => $_POST['nombre_completo'] ?? '',
-        "relacion_entidad" => $_POST['relacion_entidad'] ?? '',
-        "correo_electronico" => $_POST['correo_electronico'] ?? '',
-        "telefono_contacto" => $_POST['telefono_contacto'] ?? '',
-        "autorizacion_tratamiento_datos" => isset($_POST['autorizacion_tratamiento_datos']),
-        "declara_buena_fe" => isset($_POST['declara_buena_fe'])
+        "tipoReporte" => $_POST['tipoReporte'] ?? '',
+        "Entidad" => $_POST['Entidad'] ?? '',
+        "areaProceso" => $_POST['areaProceso'] ?? '', 
+        "fechaAproximada" => $_POST['fechaAproximada'] ?? '',
+        "lugarHechos" => $_POST['lugarHechos'] ?? '',
+        "descripcionHechos" => $_POST['descripcionHechos'] ?? '',
+        "personasInvolucradas" => $_POST['personasInvolucradas'] ?? '',
+        "Anonimo" => $_POST['Anonimo'] ?? '',
+        "nombreCompleto" => $_POST['nombreCompleto'] ?? '',
+        "relacionEntidad" => $_POST['relacionEntidad'] ?? '',
+        "correoElectronico" => $_POST['correoElectronico'] ?? '',
+        "telefonoContacto" => $_POST['telefonoContacto'] ?? '',
+        "autorizacionTratamientoDatos" => isset($_POST['autorizacionTratamientoDatos']),
+        "declaraBuenaFe" => isset($_POST['declaraBuenaFe']),
+        "fechaEnvio" => date("Y-m-d"),
+        "estadoDenuncia" => $_POST['estadoDenuncia'] ?? ''
     ];
-
+  
     echo "<script>";
-    echo "console.log('DATOS RECIBIDOS DEL FORMULARIO:');";
     echo "console.log(" . json_encode($datos) . ");";
     echo "</script>";
 }
@@ -68,8 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div id="step-3" class="step text-gray-400">3. Información</div>
           <div id="step-4" class="step text-gray-400">4. Finaliza</div>
         </div>
+        
+         <input type="hidden" id="estadoDenuncia" name="estadoDenuncia" value="Pendiente">
+
         <input type="hidden" id="tiempo_inicio" name="tiempo_inicio">
-        <input type="hidden" name="tipo_reporte" id="tipo_reporte">
+        <input type="hidden" name="tipoReporte" id="tipoReporte">
         <div id="paso-1" class="requerido paso bg-white rounded-2xl shadow p-6 mt-6">
           <label class="block font-semibold mb-2">Tipo de reporte</label>
   
@@ -106,10 +110,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <label class="block  font-semibold mb-1">
                 Entidad involucrada
               </label>
-              <select id="entidad" name="entidad" class=" requerido w-full border  border-gray-300 rounded-lg p-2
+              <select id="Entidad" name="Entidad" class=" requerido w-full border  border-gray-300 rounded-lg p-2
                 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600
                 bg-white">
-                <option value="" disabled selected>Seleccione una entidad</option>
+                <option value="" disabled selected>Seleccione una Entidad</option>
                 <option value="CEMID">CEMID</option>
                 <option value="San Pablo">San Pablo</option>
                 <option value="Formemos">Formemos</option>
@@ -122,14 +126,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <label class="block font-semibold mb-1">
                 Área o proceso involucrado
               </label>
-              <input type="text" id="area_proceso" name="area_proceso" class="requerido w-full border border-gray-300 rounded-lg p-2
+              <input type="text" id="areaProceso" name="areaProceso" class="requerido w-full border border-gray-300 rounded-lg p-2
                 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
             </div>
             <div>
               <label class="block font-semibold mb-1">
                 Fecha aproximada
               </label>
-              <input type="date" id="fecha_aproximada" name="fecha_aproximada" class="requerido w-full border border-gray-300 rounded-lg p-2
+              <input type="date" id="fechaAproximada" name="fechaAproximada" class="requerido w-full border border-gray-300 rounded-lg p-2
                 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
             </div>
           </div>
@@ -149,15 +153,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="paso-2" class=" paso hidden bg-white rounded-2xl shadow p-6 mt-6">
   
           <label class="block font-semibold mb-2">Lugar o sede donde ocurrieron los hechos</label>
-          <textarea id="lugar_hechos" name="lugar_hechos" class="requerido w-full border rounded p-2 mb-4"
+          <textarea id="lugarHechos" name="lugarHechos" class="requerido w-full border rounded p-2 mb-4"
             placeholder="Describe la sede, ciudad o lugar específico donde sucedieron los hechos."></textarea>
   
           <label class="block font-semibold mb-2">Descripción de los hechos</label>
-          <textarea id="descripcion_hechos" name="descripcion_hechos" rows="2" class="requerido w-full border rounded p-2 mb-4"
+          <textarea id="descripcionHechos" name="descripcionHechos" rows="2" class="requerido w-full border rounded p-2 mb-4"
             placeholder="Describe de manera clara qué ocurrió, cómo ocurrió y quiénes están involucrados, en lo posible con datos verificables."></textarea>
   
           <label class="block font-semibold mb-2">Personas involucradas (si las conoces)</label>
-          <textarea id="personas_involucradas" name="personas_involucradas" rows="2" class="requerido w-full border rounded p-2 mb-4"
+          <textarea id="personasInvolucradas" name="personasInvolucradas" rows="2" class="requerido w-full border rounded p-2 mb-4"
             placeholder="Incluye nombres, cargos o cualquier dato que permita identificar a las personas mencionadas."></textarea>
       
           <div class="flex justify-between mt-6">
@@ -177,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ¿Desea realizar el reporte de forma anonima?
       </label>
   
-      <select id="anonimo" name="anonimo" class="w-full border rounded p-2 mb-4" onchange="AnonimoSi()">
+      <select id="Anonimo" name="Anonimo" class="w-full border rounded p-2 mb-4" onchange="AnonimoSi()">
         <option value="No">No</option>
         <option value="Si">Si</option>
       </select>
@@ -185,22 +189,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div id="datos-personales" class="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
         <div>
           <label id="nombre" class="block font-semibold mb-1">Nombre completo</label>
-          <input type="text" id="nombre_completo" name="nombre_completo" class="requerido w-full border rounded p-2 mb-4">
+          <input type="text" id="nombreCompleto" name="nombreCompleto" class="requerido w-full border rounded p-2 mb-4">
         </div>
   
         <div>
-          <label class="block font-semibold mb-1">Relación con la entidad</label>
-          <input type="text" id="relacion_entidad" name="relacion_entidad" class="requerido w-full border rounded p-2">
+          <label class="block font-semibold mb-1">Relación con la Entidad</label>
+          <input type="text" id="relacionEntidad" name="relacionEntidad" class="requerido w-full border rounded p-2">
         </div>
   
         <div>
           <label class="block font-semibold mb-1">Correo electrónico</label>
-          <input type="text" id="correo_electronico" name="correo_electronico" class="requerido w-full border rounded p-2 mb-4">
+          <input type="text" id="correoElectronico" name="correoElectronico" class="requerido w-full border rounded p-2 mb-4">
         </div>
   
         <div>
           <label class="block font-semibold mb-1">Teléfono de contacto</label>
-          <input type="text" id="telefono_contacto" name="telefono_contacto" class="requerido w-full border rounded p-2">
+          <input type="text" id="telefonoContacto" name="telefonoContacto" class="requerido w-full border rounded p-2">
         </div>
           </div>
   
@@ -234,7 +238,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </p>
   
       <div class="flex items-start gap-3 mb-6">
-        <input type="checkbox" id="autorizacion_tratamiento_datos" name="autorizacion_tratamiento_datos" class="requerido mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
+        <input type="checkbox" id="autorizacionTratamientoDatos" name="autorizacionTratamientoDatos" class="requerido mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
           focus:ring-blue-600">
         <label class="text-sm text-gray-700">
           Sí autorizo. Puede consultar la
@@ -253,7 +257,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </p>
   
       <div class="flex items-start gap-3 mb-6">
-        <input type="checkbox" id="declara_buena_fe" name="declara_buena_fe" class="requerido mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
+        <input type="checkbox" id="declaraBuenaFe" name="declaraBuenaFe" class="requerido mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded
           focus:ring-blue-600">
         <label class="text-sm text-gray-700">
           Declaro que la información suministrada es veraz según mi conocimiento y que actué de buena fe,
@@ -281,7 +285,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     const botones = document.querySelectorAll('.opcion');
     let opcionSeleccionada = false;
     let pasoActual = 1;
-    const inputHidden = document.getElementById('tipo_reporte');
+    const inputHidden = document.getElementById('tipoReporte');
 
 botones.forEach(boton => {
   boton.addEventListener('click', () => {
@@ -344,11 +348,11 @@ Toast.fire({
     return false;
   }
 
-  const anonimo = document.getElementById("anonimo")?.value;
+  const Anonimo = document.getElementById("Anonimo")?.value;
   const campos = document.querySelectorAll(`#paso-${paso} .requerido`);
 
   campos.forEach(campo => {
-    if (anonimo === "Si" && campo.closest('#datos-personales')) {
+    if (Anonimo === "Si" && campo.closest('#datos-personales')) {
       return;
     }
 
@@ -368,7 +372,7 @@ Toast.fire({
       campo.classList.remove('border-red-500');
     }
 
-    if (campo.id === "correo_electronico" && campo.value.trim() !== "") {
+    if (campo.id === "correoElectronico" && campo.value.trim() !== "") {
       if (!campo.value.includes("@") || !campo.value.includes(".")) {
         campo.classList.add('border-red-500');
         valido = false;
@@ -376,7 +380,7 @@ Toast.fire({
       }
     }
 
-    if (campo.id === "telefono_contacto" && campo.value.trim() !== "") {
+    if (campo.id === "telefonoContacto" && campo.value.trim() !== "") {
     const telefonoRegex = /^[0-9]{10}$/;
 
     if (!telefonoRegex.test(campo.value)) {
@@ -411,10 +415,10 @@ Toast.fire({
 
 
 function AnonimoSi() {
-  const anonimo = document.getElementById("anonimo").value;
+  const Anonimo = document.getElementById("Anonimo").value;
   const datos = document.getElementById("datos-personales");
 
-  if (anonimo === "Si") {
+  if (Anonimo === "Si") {
     datos.style.display = "none";
   } else {
     datos.style.display = "grid";
